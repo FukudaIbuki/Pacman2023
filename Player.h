@@ -3,29 +3,54 @@
 
 class Stage;
 
+class PacRect
+{
+public:
+	PacRect();
+	void SetRectCenter(float _cx, float _cy, float _width, float _height);
+	void SetRectTopBottom(float _left, float _top, float _width, float _height);
+	~PacRect() {};
+	float GetLeft();
+	float GetRight();
+	float GetTop();
+	float GetBottom();
+	float GetCenterX();
+	float GetCenterY();
+	float GetWidth();
+	float GetHeight();
+	float top;
+	float bottom;
+	float left;
+	float right;
+	float centerx;
+	float centery;
+	float width;
+	float height;
+};
+
 class Player :
     public GameObject
 {
 	int hModel_;
 	float speed_;
 	Stage* pStage_;
-	int hpMax_;//Å‘åHP
+	int hpMax_;//æœ€å¤§HP
 	int hpCrr_;//HP
 public:
-	//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	//ˆø”Fparent  eƒIƒuƒWƒFƒNƒgiSceneManagerj
+	//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	//å¼•æ•°ï¼šparent  è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆï¼ˆSceneManagerï¼‰
 	Player(GameObject* parent);
 
-	//‰Šú‰»
+	//åˆæœŸåŒ–
 	void Initialize() override;
 
-	//XV
+	//æ›´æ–°
 	void Update() override;
 
-	//•`‰æ
+	//æç”»
 	void Draw() override;
 
-	//ŠJ•ú
+	//é–‹æ”¾
 	void Release() override;
 };
 
