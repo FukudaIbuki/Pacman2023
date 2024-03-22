@@ -23,6 +23,7 @@ void Player::Initialize()
 	transform_.position_.x = 0.5;
 	transform_.position_.z = 1.5;
 	pStage_ = (Stage *)FindObject("Stage");
+	rec.SetRectCenter(transform_.position_.x, transform_.position_.z, 1.0, 1.0);
 }
 
 void Player::Update()
@@ -171,14 +172,8 @@ void Player::Release()
 }
 
 PacRect::PacRect()
-	: top(-1),
-	bottom(-1),
-	left(-1),
-	right(-1),
-	centerx(-1),
-	centery(-1),
-	width(-1),
-	height(-1)
+	: top(-1),bottom(-1),left(-1),right(-1),
+	centerx(-1),centery(-1),width(-1),height(-1)
 {
 }
 
