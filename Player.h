@@ -36,6 +36,7 @@ class Player :
 	Stage* pStage_;
 	int hpMax_;//最大HP
 	int hpCrr_;//HP
+	PacRect rec;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
