@@ -1,11 +1,8 @@
-#include "Stage.h"
-#include "Engine/model.h"
-#include "Engine/Camera.h"
 #include "Engine/CsvReader.h"
 
 namespace {
 	//const int STAGE_X{ 15 };
-	//const int STAGE_Y{ 15 };	
+	//const int STAGE_Y{ 15 };
 }
 
 bool Stage::IsWall(int _x, int _y)
@@ -27,7 +24,7 @@ Stage::Stage(GameObject* parent)
 
 	for (int i = 0; i < stageHeight_; i++)
 	{
-		vector<int> sdata(stageWidth_, 0);//15ŒÂ‚Ì”z—ñ‚ğ0‚Å‰Šú‰»
+		vector<int> sdata(stageWidth_, 0);
 		stageData_.push_back(sdata);
 	}
 	//vector<vector<int>> stageData_(STAGE_Y, vector<int>(STAGE_X, 0));
@@ -59,9 +56,9 @@ void Stage::Update()
 void Stage::Draw()
 {
 	Transform floorTrans;
-	floorTrans.position_ = {0, 0, 0};
+	floorTrans.position_ = { 0, 0, 0 };
 
-	for (int z = 0; z < 15; z++){
+	for (int z = 0; z < 15; z++) {
 		for (int x = 0; x < 15; x++) {
 			floorTrans.position_ = { (float)x, 0, (float)(14 - z) };
 			if (stageData_[z][x] == 1) {
@@ -74,12 +71,12 @@ void Stage::Draw()
 			}
 		}
 	}
-	
+
 }
 
 void Stage::Release()
 {
-	for (int i = 0; i < stageHeight_; i++) 
+	for (int i = 0; i < stageHeight_; i++)
 	{
 		stageData_[i].clear();
 	}
