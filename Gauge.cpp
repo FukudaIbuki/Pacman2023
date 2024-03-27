@@ -9,9 +9,9 @@ Gauge::Gauge(GameObject* parent)
 
 void Gauge::Initialize()
 {
-	hGaugeBar_ = Image::Load("LifeGauge.png");
+	hGaugeBar_ = Image::Load("LifeGauge2.png");
 	assert(hGaugeBar_ >= 0);
-	hGaugeFrame_ = Image::Load("LifeGauge_Frame.png");
+	hGaugeFrame_ = Image::Load("LifeGauge_Frame2.png");
 	assert(hGaugeFrame_ >= 0);
 
 	transform_.position_.x = 0.0f;
